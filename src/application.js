@@ -5,7 +5,6 @@ let app = express()
 
 let router = express.Router()
 buildRoutes(router)
-
 app.use(router)
 
 app.listen(3000, function() {

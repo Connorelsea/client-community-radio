@@ -1,4 +1,4 @@
-import * as routes_obj from "./routes/index"
+import * as routes_obj from "../index"
 
 /*
  * Build Routes
