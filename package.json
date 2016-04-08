@@ -3,13 +3,21 @@
   "version": "0.0.1",
   "scripts": {
     "start": "nodemon lib/application.js",
-    "wbuild": "nodemon --watch src --exec npm run build",
-    "build": "babel src -d lib"
+    "watch": "npm run clean:css && npm run watch:css & npm run watch:js",
+    "build:js": "babel src -d lib",
+    "watch:js": "nodemon --watch src --exec npm run build:js",
+    "build:css": "stylus -u nib res/styles/src/index.styl -o res/styles/lib",
+    "watch:css": "stylus -u nib res/styles/src/index.styl -o res/styles/lib -w",
+    "clean:css": "rm -rf res/styles/lib && mkdir -p res/styles/lib"
   },
   "dependencies": {
     "babel-cli": "^6.6.5",
     "babel-preset-es2015": "^6.6.0",
+    "bemto.jade": "^1.0.2",
     "express": "^4.13.4",
-    "mysql": "^2.10.2"
+    "jade": "^1.11.0",
+    "mysql": "^2.10.2",
+    "nib": "^1.1.0",
+    "stylus": "^0.54.2"
   }
 }

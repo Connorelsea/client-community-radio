@@ -9,16 +9,31 @@ const connection = mysql.createConnection({
     host, user, password, database
 })
 
-
 const connect = function() {
 
-    connection.connect(function(err) {
+    return new Promise(function(resolve, reject) {
 
-        if (err) {
-            console.log(`MySQL: Connection error: ${err}`)
-        } else {
-            console.log("MySQL: Connected successfully")
-        }
+        connection.connect(function(err) {
+
+            if (err) {
+                console.log(`MySQL: Connection error: ${err}`)
+
+                reject({
+                    success: false,
+                    msg: err
+                })
+
+            } else {
+                console.log("MySQL: Connected successfully")
+
+                resolve({
+                    success: true,
+                    msg: "Connected successfully"
+                })
+                
+            }
+
+        })
 
     })
 

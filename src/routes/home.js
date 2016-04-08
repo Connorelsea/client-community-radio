@@ -5,5 +5,5 @@ export const route = "/"
 export const middleware = [];
 
 export const action = function(req, res) {
-    res.send("Home");
+    res.render("home", { title: "Hey!", message: "Hello there!" })
 }
