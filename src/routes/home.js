@@ -5,5 +5,8 @@ export const route = "/"
 export const middleware = [];
 
 export const action = function(req, res) {
-    res.render("home", { title: "Hey!", message: "Hello there!" })
+    res.render("home", {
+        title: "A Pause For Thought - Home",
+        message: "Hello there!"
+    })
 }

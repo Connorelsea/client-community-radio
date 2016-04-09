@@ -1,7 +1,40 @@
-html
-  head
-    title= title
-    style
-      include ../res/styles/lib/index.css
-  body
-    h1= message
+extends page
+
+block body
+
+  .header
+
+    .header__logo
+      h1
+        span.header__logo__upper A Pause For
+        span.header__logo__lower Thought
+
+    .header__nav
+      ul
+        li
+          a(href="#") Home
+        li
+          a(href="#") About
+        li
+          a(href="#") Shows
+        li
+          a(href="#") Schedule
+        li
+          a(href="#") Blog
+
+  .section
+
+    .hero
+
+      .hero__left
+
+        .call
+
+          h2.call__title
+            span.call__title__upper A thoughtful show,
+            span.call__title__lower for thoughtful people
+
+          h3.call__subtitle
+            span Every Wednesday, 5PM
+
+      .hero__right
