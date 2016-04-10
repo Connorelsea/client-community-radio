@@ -1,12 +1,22 @@
 @import "nib"
 
 .header
-  display flex
-  flex-direction row
-
+  background-color #eee
   font-family "Iowan Old Style"
+  box-shadow 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+
+  &__container
+    padding 25px 0px
+    max-width 800px
+    margin 0 auto
+
+    display flex
+    align-items center
+    justify-content space-between
+    flex-direction row
 
   &__logo
+    color #007586
 
     > h1
       display flex
@@ -19,6 +29,53 @@
       text-transform uppercase
 
     &__lower
-      font-size 2.65em
+      font-size 2.95em
       font-weight 200
       font-style italic
+
+  &__nav
+
+    > ul
+      > li
+        width 85px
+        display inline-block
+        text-align center
+
+        > a
+          padding 8px 8px
+          font-size 1.15em
+          font-weight 600
+          text-decoration none
+          color #13535e
+
+          &:hover
+            border-bottom 2px solid #c9c9c9
+            margin-bottom -2px
+            font-weight 800
+
+.hero
+  background-color #1f7d8d
+
+  &__container
+    width 1000px
+    margin 0 auto
+
+    padding 30px 0px
+
+  &__call
+    font-family "Iowan Old Style"
+    color white
+
+    &__title
+      font-size 2.55em
+      font-weight bold
+      padding-bottom 10px
+
+      span
+        display block
+
+    &__subtitle
+      font-size 1.25em
+      font-weight 800
+      text-transform uppercase
+      color #80bac1
