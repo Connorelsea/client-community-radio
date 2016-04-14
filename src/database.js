@@ -5,11 +5,13 @@ const user = "root"
 const password = ""
 const database = "radio"
 
-const connection = mysql.createConnection({
+export const connection = mysql.createConnection({
     host, user, password, database
 })
 
-const connect = function() {
+console.log("IN DATABASE: " + connection.query)
+
+export const connect = function() {
 
     return new Promise(function(resolve, reject) {
 
