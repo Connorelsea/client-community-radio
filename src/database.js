@@ -5,17 +5,25 @@ const user = "root"
 const password = ""
 const database = "radio"
 
-export const connection = mysql.createConnection({
-    host, user, password, database
-})
+let connection
 
-console.log("IN DATABASE: " + connection.query)
+export const createConnection = function() {
+	connection = mysql.createConnection({
+		host, user, password, database
+	})
+}
+
+export const getConnection = function() {
+	return connection
+}
 
 export const connect = function() {
 
     return new Promise(function(resolve, reject) {
 
-        connection.connect(function(err) {
+				createConnection()
+
+        getConnection().connect(function(err) {
 
             if (err) {
                 console.log(`MySQL: Connection error: ${err}`)
@@ -41,10 +49,6 @@ export const connect = function() {
 
 }
 
-const getConnection = function () {
-    return connection
-}
-
 export default {
-    connection, connect,  getConnection
+	createConnection, getConnection, connect
 }
