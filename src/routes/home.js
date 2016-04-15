@@ -28,6 +28,9 @@ export const action = function(req, res) {
 		let posts = []
 
 		for (let i = 0; i < rows.length; i++) {
+
+			console.log(rows[i].tags.split(","))
+			
 			posts.push({
 				id:      rows[i].id,
 				poster:  rows[i].poster,

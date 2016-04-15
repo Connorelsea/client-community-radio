@@ -1,5 +1,22 @@
 extends page
 
+mixin createPosts(list)
+	each post in list
+		.hpost
+			.hpost__title
+				h2= post.title
+
+				.hpost__title__tags
+
+					p.hpost__title__tags__title Tags
+
+					each tag in post.tags
+						.hpost__title__tag
+							p= tag
+
+			.hpost__body
+				p= post.body
+
 block body
 
 	.header
@@ -56,6 +73,7 @@ block body
 						h3 Thoughts from our host, Wayne Parker
 
 					.thoughts__section__list
+						+createPosts(posts.my)
 
 				.thoughts__section
 
@@ -64,3 +82,4 @@ block body
 						h3 Thoughts from our viewers and listeners
 
 					.thoughts__section__list
+						+createPosts(posts.your)

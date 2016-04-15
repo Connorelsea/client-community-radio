@@ -10,20 +10,20 @@ app.set("view engine", "jade")
 // Connect to the database and launch the server
 connect().then(function(value) {
 
-  if (value.success === false) {
+	if (value.success === false) {
 
-  	console.log("Error: Program unable to run")
+		console.log("Error: Program unable to run")
 		return false
 
-  } else {
+	} else {
 
 		// Set up router
 		let router = express.Router()
 		buildRoutes(router)
 		app.use(router)
-    return true
+		return true
 
-  }
+	}
 
 }).then(val => {
 
