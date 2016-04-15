@@ -3,7 +3,7 @@
 .header
   background-color #eee
   font-family "Iowan Old Style"
-  box-shadow 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+  box-shadow 0px 9px 24px 3px rgba(0,0,0,0.77)
 
   &__container
     padding 25px 0px
@@ -54,13 +54,17 @@
             font-weight 800
 
 .hero
-  background-color #1f7d8d
+  background-image url("br.png")
+  background-size cover
 
   &__container
+    display flex
+    justify-content space-around
+    
     width 1000px
     margin 0 auto
 
-    padding 30px 0px
+    padding 50px 0px
 
   &__call
     font-family "Iowan Old Style"
@@ -91,7 +95,7 @@
     justify-content space-around
 
   &__section
-    width 40%
+    width 43%
 
     &__title
       font-family "Iowan Old Style"
@@ -110,15 +114,31 @@
 
 .hpost
   font-family "Iowan Old Style"
+  margin-bottom 20px
+  padding 20px
+  
+  border-radius 8px
+  border 1px solid #a8c1c4
+  background-color #c5e2e6
+  
+  transition all 0.4s
+  
+  &:hover
+    box-shadow 0 10px 20px rgba(0,0,0,0.08), 0 6px 6px rgba(0,0,0,0.08)
 
   &__title
 
     h2
       font-size 1.5em
-      font-weight 600
+      font-weight 300
       color #13535e
+      
+      padding-bottom 8px
+      border-bottom 1px solid #a8c1c4
 
     &__tags
+      margin 5px 0px
+      
       &__title
         font-family "Helvetica Neue"
         font-size 0.55em
@@ -151,4 +171,39 @@
       border 1px solid #95abae
 
   &__body
-    color #4f787f
+    color #5f6f70
+    
+.hplanner
+  background-color #eee
+  min-width 400px
+  padding 20px
+  font-family "Iowan Old Style"
+  
+  box-shadow 0 3px 6px rgba(0,0,0,0.10), 0 3px 6px rgba(0,0,0,0.15)
+  border-radius 5px
+  
+  &__title
+    text-align center
+
+    h2
+      font-size 2.25em
+      font-style italic
+      color #13535e
+      
+      margin-bottom 5px
+      
+    h3
+      font-size 1.0em
+      font-weight 800
+      text-transform uppercase
+      color #1d7a89
+      
+  &__buttons
+    text-align center
+    
+    a
+      color #1d7a89
+      text-decoration none
+      
+      &:hover
+        text-decoration

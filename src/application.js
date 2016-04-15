@@ -7,6 +7,8 @@ let app = express()
 // Set up jade rendering
 app.set("view engine", "jade")
 
+app.use(express.static("res"))
+
 // Connect to the database and launch the server
 connect().then(function(value) {
 
