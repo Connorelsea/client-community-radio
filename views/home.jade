@@ -66,8 +66,21 @@ block body
 							h3 Schedule
 
 						.hplanner__events
-							p Event Listing Here
-							p Not Implemented Yet
+							each show in shows
+								a(href="#").hshow
+
+									.hshow__left
+
+										h2.hshow__date
+											span.hshow__date__month April
+											span.hshow__date__num
+												span.hshow__date__num__num 6
+												span.hshow__date__num__raised th
+
+									.hshow__right
+
+										h2.hshow__title= show.title
+										p.hshow__description= show.description
 
 						.hplanner__buttons
 							a(href="#") View Full Schedule...
