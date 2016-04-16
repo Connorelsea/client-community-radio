@@ -6,30 +6,26 @@ export const route = "/"
 
 export const middleware = [];
 
-let q = function(resolve, reject) {
-
-	getConnection().query("SELECT * FROM blog", (err, rows) => {
-
-		if (err) {
-			console.log("Query Error: " + err)
-			reject(err)
-		} else {
-			resolve(rows)
-		}
-
-	})
-
-}
-
 export const action = function(req, res) {
 
-	new Promise(q).then(rows => {
+	new Promise(function(resolve, reject) {
+
+		getConnection().query("SELECT * FROM blog", (err, rows) => {
+
+			if (err) {
+				console.log("Query Error: " + err)
+				reject(err)
+			} else {
+				resolve(rows)
+			}
+
+		})
+
+	}).then(rows => {
 
 		let posts = []
 
 		for (let i = 0; i < rows.length; i++) {
-
-			console.log(rows[i].tags.split(","))
 			
 			posts.push({
 				id:      rows[i].id,
@@ -45,19 +41,54 @@ export const action = function(req, res) {
 
 	}).then(posts => {
 
+    return new Promise((resolve, reject) => {
+
+        getConnection().query("SELECT * FROM shows", (err, rows) => {
+            if (err) reject("error")
+            else resolve({ posts: posts, shows: rows })
+        })
+
+    })
+
+}).then(object => {
+
+	let shows = []
+
+	for (let i = 0; i < object.shows.length; i++) {
+		shows.push({
+			id: object.shows[i].id,
+			title: object.shows[i].title,
+			description: object.shows[i].description,
+			date: object.shows[i].date,
+			guests: object.shows[i].guests
+		})
+	}
+
+	return {
+		posts: object.posts, shows
+	}
+
+}).then(object => {
+
+		let posts = object.posts
+
 		let post_container = { my: [], your: [] }
 
 		post_container.my   = posts.filter(x => x.section === "my")
 		post_container.your = posts.filter(x => x.section === "your")
 
-		return post_container
+		return {
+			posts: post_container,
+			shows: object.shows
+		}
 
-	}).then(posts => {
+	}).then(object => {
 
 		res.render("home", {
 			title: "A Pause For Thought - Home",
 			message: "Hello there!",
-			posts: posts
+			posts: object.posts,
+			shows: object.shows
 		})
 
 	}).catch(err => {
