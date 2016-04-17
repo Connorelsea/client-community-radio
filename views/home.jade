@@ -1,5 +1,7 @@
 extends page
 
+include ./global_elements.jade
+
 mixin createPosts(list)
 	each post in list
 		.hpost
@@ -19,27 +21,7 @@ mixin createPosts(list)
 
 block body
 
-	.header
-
-		.header__container
-
-			.header__logo
-				h1
-					span.header__logo__upper A Pause For
-					span.header__logo__lower Thought
-
-			.header__nav
-				ul
-					li
-						a(href="/") Home
-					li
-						a(href="/about") About
-					li
-						a(href="/shows") Shows
-					li
-						a(href="/schedule") Schedule
-					li
-						a(href="/blog") Blog
+	+header()
 
 	.section
 
@@ -83,7 +65,7 @@ block body
 										p.hshow__description= show.description
 
 						.hplanner__buttons
-							a(href="#") View Full Schedule...
+							a(href="#") View Future Shows / Schedule...
 
 	.section.section--thoughts
 

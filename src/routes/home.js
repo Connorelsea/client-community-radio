@@ -13,7 +13,6 @@ export const action = function(req, res) {
 		getConnection().query("SELECT * FROM blog", (err, rows) => {
 
 			if (err) {
-				console.log("Query Error: " + err)
 				reject(err)
 			} else {
 				resolve(rows)
