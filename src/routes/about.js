@@ -10,6 +10,6 @@ export const action = function(req, res) {
 	res.render("about", {
 		title: "A Pause For Thought - About",
 		header_title: "About",
-		header_subtitle: "Subtitle",
+		header_subtitle: "Our Mission, Purpose, and Place",
 	})
 }

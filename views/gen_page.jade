@@ -4,7 +4,8 @@ include ./global_elements.jade
 
 block body
 	+header()
-	header.title
-		h1= header_title
-		h2= header_subtitle
+	header.global-title
+		.global-title__container
+			h1= header_title
+			h2= header_subtitle
 	block content
