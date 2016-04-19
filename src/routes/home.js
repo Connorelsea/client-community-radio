@@ -15,6 +15,7 @@ export const action = function(req, res) {
 			if (err) {
 				reject(err)
 			} else {
+				
 				resolve(rows)
 			}
 
