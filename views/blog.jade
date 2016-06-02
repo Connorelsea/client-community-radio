@@ -1,0 +1,9 @@
+extend gen_page
+
+include ./global_elements.jade
+
+block content
+	.page
+		.page__container--top
+			.posts.posts--blog
+				+createPosts(posts)

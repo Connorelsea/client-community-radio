@@ -1,6 +1,7 @@
 import express from "express"
 import { buildRoutes } from "./routes/utility/build"
 import { createConnection, connect } from "./database.js"
+import bodyParser from "body-parser"
 
 let app = express()
 
@@ -8,6 +9,8 @@ let app = express()
 app.set("view engine", "jade")
 
 app.use(express.static("res"))
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
 // Connect to the database and launch the server
 connect().then(function(value) {

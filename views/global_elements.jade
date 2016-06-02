@@ -20,3 +20,23 @@ mixin header()
 						a(href="/schedule") Schedule
 					li
 						a(href="/blog") Blog
+
+
+mixin createPosts(list)
+	each post in list
+		a(href=`blog/${post.id}`).hpost
+			.hpost__title
+				.hpost__title__group
+					h2= post.title
+					h3!= "By " + post.poster
+
+				.hpost__title__tags
+
+					p.hpost__title__tags__title Tags
+
+					each tag in post.tags
+						.hpost__title__tag.hpost__outlined-box
+							p= tag
+
+			.hpost__body
+				p!= post.description + " <strong>Read More</strong>"

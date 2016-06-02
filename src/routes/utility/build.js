@@ -15,6 +15,8 @@ export const buildRoutes = function(router) {
     for (let key in routes) {
         if (!routes.hasOwnProperty(key)) continue
         let route = routes[key]
-        router.get(route.route, route.middleware, route.action)
+      	if (route.type === "POST") router.post(route.route, route.middleware, route.action)
+      	else if (route.type === "GET") router.get(route.route, route.middleware, route.action)
+      	else console.log("ERROR: UNSUPPORTED TYPE STRING FOR ROUTE")
     }
 }

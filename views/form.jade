@@ -1,0 +1,26 @@
+extend gen_page
+
+block content
+	.page
+		.page__container--top
+			form(name="form", action=form.submit_link, method="post").form
+
+				each element in form.elements
+
+					- var desc_container = element.desc.split(":")
+					- var title = desc_container[0]
+					- var desc = desc_container[1]
+
+					if element.type === "input"
+						.form__group
+							h2.form__input__desc= title
+							p= desc
+							input(type="text", name=element.name).form__input
+
+					else
+						.form__group
+							h2.form__input__desc= title
+							p= desc
+							textarea(type="text", name=element.name).form__input
+
+				input(type="submit").form__group__submit

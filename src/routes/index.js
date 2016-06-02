@@ -1,9 +1,21 @@
 import * as home from "./home.js"
 import * as blog from "./blog.js"
 import * as about from "./about.js"
+import * as shows from "./shows.js"
+import * as schedule from "./schedule.js"
+import * as post from "./post.js"
+import * as admin from "./admin.js"
+import * as admin_input from "./admin_input.js"
+import * as thoughts from "./thoughts.js"
 
 export default {
     home,
     blog,
-    about
+    about,
+    shows,
+    schedule,
+    post,
+    admin,
+    admin_input,
+    thoughts,
 }

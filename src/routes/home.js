@@ -15,7 +15,6 @@ export const action = function(req, res) {
 			if (err) {
 				reject(err)
 			} else {
-				
 				resolve(rows)
 			}
 
@@ -33,7 +32,8 @@ export const action = function(req, res) {
 				section: rows[i].section,
 				tags:    rows[i].tags.split(","),
 				title:   rows[i].title,
-				body:    rows[i].body
+				body:    rows[i].body,
+				description: rows[i].description,
 			})
 		}
 

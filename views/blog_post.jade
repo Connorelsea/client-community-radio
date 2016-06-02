@@ -5,7 +5,9 @@ include ./global_elements.jade
 block body
 	+header()
 	header.global-title
-		.global-title__container
+		.global-title__container.post-title__container
 			h1= header_title
 			h2= header_subtitle
-	block content
+	.page
+		.page__container--top
+			p.bpost__content= post.body

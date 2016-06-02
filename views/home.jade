@@ -2,23 +2,6 @@ extends page
 
 include ./global_elements.jade
 
-mixin createPosts(list)
-	each post in list
-		.hpost
-			.hpost__title
-				h2= post.title
-
-				.hpost__title__tags
-
-					p.hpost__title__tags__title Tags
-
-					each tag in post.tags
-						.hpost__title__tag
-							p= tag
-
-			.hpost__body
-				p= post.body
-
 block body
 
 	+header()
@@ -44,8 +27,8 @@ block body
 
 					.hplanner
 						.hplanner__title
-							h2 April
-							h3 Schedule
+							h2 Shows
+							h3 Recent
 
 						.hplanner__events
 							each show in shows
@@ -65,7 +48,8 @@ block body
 										p.hshow__description= show.description
 
 						.hplanner__buttons
-							a(href="#") View Future Shows / Schedule...
+							a(href="/shows") Past Shows
+							a(href="/schedule") Future Schedule
 
 	.section.section--thoughts
 
@@ -81,6 +65,8 @@ block body
 
 					.thoughts__section__list
 						+createPosts(posts.my)
+						.buttonContainer
+							a(href="/blog").thoughts__button View More Thoughts
 
 				.thoughts__section
 
@@ -90,3 +76,5 @@ block body
 
 					.thoughts__section__list
 						+createPosts(posts.your)
+						.buttonContainer
+							a(href="/user/post/create").thoughts__button Submit Your Thoughts
