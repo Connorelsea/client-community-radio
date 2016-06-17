@@ -65,60 +65,6 @@ export const action = function(req, res) {
 
 		}
 
-		if (target === "show") {
-
-			if (action === "create") {
-
-				res.render("form", {
-					title: "A Pause For Thought - Show Creation",
-					header_title: "Create Show",
-					header_subtitle: "Admin Panel: Submit an Official Show",
-					form: {
-						submit_link: `/admin/post/submit?password=${password}`,
-						elements: [
-							{
-								type: "input",
-								name: "title",
-								desc: "Title:The title of this show." },
-							{
-								type: "input",
-								name: "guests",
-								desc: "Guests:Guests that appear on the show. Represent the guests as a comma-separated list." },
-							{
-								type: "textarea",
-								name: "description",
-								desc: "Description:A brief description of this show that will be listed publically." },
-						]
-					}
-				})
-
-			}
-
-		}
-
-		if (target === "schedule") {
-
-			if (action === "edit") {
-
-				res.render("form", {
-					title: "A Pause For Thought - Schedule Creation",
-					header_title: "Edit Schedule Content",
-					header_subtitle: "Admin Panel: Edit Schedule Content",
-					form: {
-						submit_link: `/admin/post/submit?password=${password}`,
-						elements: [
-							{
-								type: "textarea",
-								name: "content",
-								desc: "Content:The content of the schedule area styled using markdown" },
-						]
-					}
-				})
-
-			}
-
-		}
-
 	})
 
 }
