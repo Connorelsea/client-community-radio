@@ -32,7 +32,8 @@ export const action = function(req, res) {
 			title: "A Pause For Thought - Post",
 			header_title: `${post.title}`,
 			header_subtitle: `Written By ${post.poster}`,
-			post: post
+			post: post,
+			route: "apauseforthought.com" + route.replace(":post", req.params.post)
 		})
 
 	})

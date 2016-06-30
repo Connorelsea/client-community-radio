@@ -292,3 +292,82 @@
     font-size
     color #8ea9ac
     
+.call-bar
+  width 1000px
+  height 150px
+  margin 0 auto
+  display flex
+  justify-content space-between
+  
+  &__badge
+    background-color black
+    border-radius 10px
+    color white
+    font-family sans-serif
+    font-size 1rem
+    font-weight 800
+    text-transform uppercase
+    padding 8px 24px
+    
+    &--on-air
+      display inline-block
+      margin 10px 0
+      background-color #127888
+
+  &__left
+    position relative
+    overflow hidden
+    
+    > *
+      position relative
+      display inline-block
+    
+    &__thinker
+      bottom -20px
+      width 210px
+    
+    &__title
+      font-family "Iowan Old Style"
+      font-weight 800
+      font-size 2.3em
+      
+    &__container
+      position relative
+      top -105px
+      left -23px
+      
+  &__right
+    font-family "Iowan Old Style"
+    color black
+    margin-right 30px
+    
+    &__header
+      font-size 1.4rem
+      font-weight 800
+      padding 10px 0px
+      padding-top 30px
+    
+    &__lower-container
+      font-size 1.1rem
+      color darken(gray, 20)
+      
+      > *
+        padding 5px 0px
+        
+      span
+        margin-left 6px
+        padding 1px 5px
+        background-color #127888
+        border-radius 10px
+        color #eee
+        
+      a
+        color darken(gray, 20)
+        text-decoration none
+        
+        &:hover
+          text-decoration underline
+
+.section--call-bar
+  background-color #eee
+

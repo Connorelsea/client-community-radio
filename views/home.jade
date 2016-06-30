@@ -51,6 +51,23 @@ block body
 							a(href="/shows") Past Shows
 							a(href="/schedule") Future Schedule
 
+	.section.section--call-bar
+		.call-bar
+
+			.call-bar__left
+				img(src="thinker.png").call-bar__left__thinker
+				.call-bar__left__container
+					h2.call-bar__left__title Every Wednesday
+					.call-bar__badge.call-bar__badge--on-air 5:00 PM
+
+			.call-bar__right
+				h2.call-bar__right__header Share your thoughts...
+				.call-bar__right__lower-container
+					h3
+						a(href="/user/post/create")!= "Call us on the show (225-666-5555)" + "<span>➝</span>" 
+					h3
+						a(href="/user/post/create")!= "Write a guest post for this site" + "<span>➝</span>" 
+
 	.section.section--thoughts
 
 		.thoughts

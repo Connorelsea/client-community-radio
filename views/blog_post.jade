@@ -3,11 +3,13 @@ extends page
 include ./global_elements.jade
 
 block body
-	+header()
-	header.global-title
-		.global-title__container.post-title__container
-			h1= header_title
-			h2= header_subtitle
-	.page
-		.page__container--top
-			p.bpost__content= post.body
+  +header()
+  header.global-title
+    .global-title__container.post-title__container
+      h1= header_title
+      h2= header_subtitle
+  .page
+    .page__container--top
+      p.bpost__content= post.body
+    .page__container--top
+      .fb-comments(data-href=route data-numposts="5")
