@@ -11,5 +11,11 @@ block body
   .page
     .page__container--top
       p.bpost__content= post.body
-    .page__container--top
+      p.bpost__content__author
+        span.bpost__content__author--intro Written by 
+        span.bpost__content__author--name= post.poster
+    .page__container--top.page__container--fb
+      .page__container--fb__header
+        h2 Comments
+        p Discuss this blog post with the show's online community
       .fb-comments(data-href=route data-numposts="5")

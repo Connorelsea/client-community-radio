@@ -7,6 +7,7 @@ import * as post from "./post.js"
 import * as admin from "./admin.js"
 import * as admin_input from "./admin_input.js"
 import * as thoughts from "./thoughts.js"
+import * as admin_view from "./admin_view.js"
 
 export default {
     home,
@@ -18,4 +19,5 @@ export default {
     admin,
     admin_input,
     thoughts,
+    admin_view
 }

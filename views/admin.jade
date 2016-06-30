@@ -1,7 +1,9 @@
 extend gen_page
 
 block content
-	.page
-		.page__container--top 
-			.page__container--markup
-				p Admin Page
+  .page
+    .page__container--top 
+      .page__container--markup
+        ul
+          li: a(href="http://localhost:3000/admin/post/create?password=" + password) Create New Blog Post
+          li: a(href="http://localhost:3000/admin/show/create?password=" + password) Create New Show
