@@ -23,20 +23,23 @@ mixin header()
 
 
 mixin createPosts(list)
-	each post in list
-		a(href=`blog/${post.id}`).hpost
-			.hpost__title
-				.hpost__title__group
-					h2= post.title
-					h3!= "By " + post.poster
+	if list.length < 1
+		p.no-posts There are currently no posts in this section. Check back soon for more.
+	else
+		each post in list
+			a(href=`blog/${post.id}`).hpost
+				.hpost__title
+					.hpost__title__group
+						h2= post.title
+						h3!= "By " + post.poster
 
-				.hpost__title__tags
+					.hpost__title__tags
 
-					p.hpost__title__tags__title Tags
+						p.hpost__title__tags__title Tags
 
-					each tag in post.tags
-						.hpost__title__tag.hpost__outlined-box
-							p= tag
+						each tag in post.tags
+							.hpost__title__tag.hpost__outlined-box
+								p= tag
 
-			.hpost__body
-				p!= post.description + " <strong>Read More</strong>"
+				.hpost__body
+					p!= post.description + " <strong>Read More</strong>"

@@ -10,7 +10,7 @@ export const action = function(req, res) {
 
 	new Promise(function(resolve, reject) {
 
-		getConnection().query("SELECT * FROM blog", (err, rows) => {
+		getConnection().query("SELECT * FROM blog WHERE approved = 1", (err, rows) => {
 
 			if (err) {
 				reject(err)

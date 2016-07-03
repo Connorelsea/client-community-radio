@@ -74,7 +74,7 @@ export const action = function(req, res) {
 
 		if (target === "show") {
 
-			if (action === "create") {
+			if (action === "create" ) {
 
 				res.render("form", {
 					title: "A Pause For Thought - Show Creation",
