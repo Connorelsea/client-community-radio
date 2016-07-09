@@ -1,0 +1,8 @@
+extend gen_page
+
+block content
+  each post in posts
+    .admin-post
+      .admin-post__header
+        p.admin-post__header__title= post.title
+

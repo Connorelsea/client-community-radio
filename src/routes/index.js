@@ -8,6 +8,7 @@ import * as admin from "./admin.js"
 import * as admin_input from "./admin_input.js"
 import * as thoughts from "./thoughts.js"
 import * as admin_view from "./admin_view.js"
+import * as admin_posts from "./admin_posts.js"
 
 export default {
     home,
@@ -19,5 +20,6 @@ export default {
     admin,
     admin_input,
     thoughts,
-    admin_view
+    admin_view,
+    admin_posts
 }
