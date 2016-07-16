@@ -1,8 +1,39 @@
 extend gen_page
 
 block content
-  each post in posts
-    .admin-post
-      .admin-post__header
-        p.admin-post__header__title= post.title
+  .page
+    .page__container--top
+
+      .page__details
+        p.page__details__title Page Details
+        p.page__details__body When a user of your site submits a new post, it is initially invisible. The page you are currently on lists all "invisible," or un-approved, posts. This page allows you to approve or delete prospective posts.
+        p.page__details__body If you do not wish to approve a user's prospective post, consider using the email listed to contact them and explain why, if they need an edit, etc.
+
+        p.page__details__body__alert= "Below there are currently " + posts.length + " un-approved posts awaiting review."
+
+      each post in posts
+        .admin-post
+
+          .admin-post__header.admin-post__section
+            .admin-post__header__title
+              p.admin-post__header__title__alert Title
+              p.admin-post__header__title__title= post.title
+
+            .admin-post__header__tags
+              p.admin-post__header__title__alert Tags
+              each tag in post.tags.split(",")
+                .admin-post__header__tags__tag= tag
+
+          .admin-post__description.admin-post__section
+            span.admin-post__header__title__alert Description
+            span.admin-post__section__body= post.description
+
+          .admin-post__body.admin-post__section
+            span.admin-post__header__title__alert Body
+            span.admin-post__section__body= post.body
+
+          .admin-post__buttons.admin-post__section
+            a(href="") Approve Post
+
+
 
