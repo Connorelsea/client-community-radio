@@ -33,7 +33,7 @@ connect().then(function(value) {
 }).then(val => {
 
 	app.listen(process.env.PORT || 3000, function() {
-		console.log("Application running on port " + process.env.PORT || 3000)
+		console.log("Application running")
 	})
 
 }).catch(err => {
