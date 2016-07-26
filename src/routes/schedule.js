@@ -18,14 +18,14 @@ export const action = function(req, res) {
 			if (err) {
 				reject(err)
 			} else {
-				resolve(rows)
+				resolve(rows[0])
 			}
 
 		})
 
-	}).then(shows => {
+	}).then(content => {
 
-		const text = marked(shows[0].text)
+		const text = marked(content.text)
 
 		res.render("schedule", {
 			title: "A Pause For Thought - Schedule",

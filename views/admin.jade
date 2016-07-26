@@ -4,7 +4,11 @@ block content
   .page
     .page__container--top 
       .page__container--markup
-        ul
+        p.admin The following are actions you can take as an admin to control the content of the website. If you have trouble or questions with/regarding any of the following actions, please contact the site administrator.
+        ul.admin
           li: a(href="/admin/post/create?password=" + password) Create New Blog Post
           li: a(href="/admin/show/create?password=" + password) Create New Show
-          li: a(href="?password=" + password) View Un-Approved Posts
+          li: a(href="/admin/posts?password=" + password) View Un-Approved Posts
+          li: a(href="/admin/links/edit?password=" + password) Edit 'Important Links' Page
+          li: a(href="/admin/schedule/edit?password=" + password) Edit 'Schedule' Page
+

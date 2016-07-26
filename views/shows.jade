@@ -4,7 +4,7 @@ block content
 	.pshows
 		.pshows__timeline
 			each show in shows
-				a(href="#").pshow
+				a(href="/show/" + show.id).pshow
 
 					.pshow__container
 
@@ -12,10 +12,8 @@ block content
 
 							h2.hshow__date
 								span.hshow__date__month April
-								span.hshow__date__num
-									span.hshow__date__num__num 6
-									span.hshow__date__num__raised th
-
+								+createNumber(show.day)
+								
 						.pshow__right.hshow__right
 
 							h2.hshow__title= show.title

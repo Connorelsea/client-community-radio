@@ -60,8 +60,12 @@ export const action = function(req, res) {
 			title: object.shows[i].title,
 			description: object.shows[i].description,
 			date: object.shows[i].date,
-			guests: object.shows[i].guests
+			guests: object.shows[i].guests,
+			month: object.shows[i].month,
+			day: object.shows[i].day,
 		})
+
+		if (i === 2) break;
 	}
 
 	return {

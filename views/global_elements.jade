@@ -15,12 +15,28 @@ mixin header()
 					li
 						a(href="/about") About
 					li
+						a(href="/links") Links
+					li
 						a(href="/shows") Shows
 					li
 						a(href="/schedule") Schedule
 					li
 						a(href="/blog") Blog
 
+mixin createNumber(num)
+	span.hshow__date__num
+		if num === 1
+			span.hshow__date__num__num= num
+			span.hshow__date__num__raised st
+		else if num === 2
+			span.hshow__date__num__num= num
+			span.hshow__date__num__raised nd
+		else if num === 3
+			span.hshow__date__num__num= num
+			span.hshow__date__num__raised rd
+		else
+			span.hshow__date__num__num= num
+			span.hshow__date__num__raised th
 
 mixin createPosts(list)
 	if list.length < 1

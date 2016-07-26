@@ -7,7 +7,7 @@ block content
       .page__details
         p.page__details__title Page Details
         p.page__details__body When a user of your site submits a new post, it is initially invisible. The page you are currently on lists all "invisible," or un-approved, posts. This page allows you to approve or delete prospective posts.
-        p.page__details__body If you do not wish to approve a user's prospective post, consider using the email listed to contact them and explain why, if they need an edit, etc.
+        p.page__details__body If you do not wish to approve a user's prospective post, consider using the email listed to contact them and explain why, if they need an edit, etc. If you do approve a user's prospective post, consider emailing to alert them of its publishing.
 
         p.page__details__body__alert= "Below there are currently " + posts.length + " un-approved posts awaiting review."
 
@@ -33,7 +33,8 @@ block content
             span.admin-post__section__body= post.body
 
           .admin-post__buttons.admin-post__section
-            a(href="") Approve Post
+            a(href="/admin/post/approve?id=" + post.id + "&password=password").admin-post__button--approve.admin-post__button Approve Post
+            a(href="/admin/post/remove?id=" + post.id + "&password=password").admin-post__button--remove.admin-post__button Deny and Remove Post
 
 
 

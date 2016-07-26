@@ -7,12 +7,50 @@
 	h1
 		font-size 2.5em
 
+.admin
+		padding 30px 0px
+		padding-top 20px
+		width 60%
+		margin 0 auto
+		font-family "Iowan Old Style"
+		font-size 1.2em
+		line-height 1.4em
+
 .bpost
 	
 	&__container
 		padding 30px 0px
 		width 60%
+		
+	&__youtube
+		display flex
+		justify-content center
+		> *
+			margin-top 20px
 	
+	&__guests
+		padding 30px 0px
+		padding-top 0px
+		width 60%
+		margin 0 auto
+		font-family "Iowan Old Style"
+		font-size 1.2em
+		line-height 1.6em
+		color #13535e
+		
+		h2
+			font-size 1.6em
+			font-weight 800
+
+	&__show
+		padding 30px 0px
+		width 60%
+		margin 0 auto
+		font-family "Iowan Old Style"
+		font-size 1.2em
+		line-height 1.6em
+		color #13535e
+
 	&__content
 		padding 30px 0px
 		width 60%
@@ -21,6 +59,8 @@
 		line-height 1.6em
 		color #13535e
 		margin 0 auto
+		
+		&__guests
 		
 		&__author
 			font-family "Iowan Old Style"
@@ -80,6 +120,30 @@
 	border-bottom 1px solid gray
 	padding-bottom 20px
 	padding-top 10px
+	
+	&__buttons
+		padding-top 10px
+	
+	&__button
+		font-size 0.7em
+		text-transform uppercase
+		font-weight bold
+		font-family sans-serif
+		padding 4px 10px
+		border-radius 10px
+		margin-right 7px
+		text-decoration none
+		
+		&:hover
+			text-decoration underline
+
+		&--approve
+			background-color lighten(green, 5)
+			color darken(green, 10)
+			
+		&--remove
+			background-color lighten(red, 20)
+			color darken(red, 20)
 	
 	&__section
 		margin 5px

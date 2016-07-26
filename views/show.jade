@@ -1,0 +1,26 @@
+extends page
+
+include ./global_elements.jade
+
+block body
+  +header()
+  header.global-title
+    .global-title__container.post-title__container
+      h1= header_title
+      h2= header_subtitle
+  .page
+    .page__container--top
+      .bpost__youtube!= "<iframe width=\"560\" height=\"315\" src=\"http://www.youtube.com/embed/" + show.link + "\" frameborder=\"0\" allowfullscreen></iframe>"
+
+    .page__container--top
+      p.bpost__show= show.description
+    .page__container--top
+      .bpost__guests
+        h2 Guests
+        each guest in show.guests.split(",")
+          p= guest
+    .page__container--top.page__container--fb
+      .page__container--fb__header
+        h2 Comments
+        p Discuss this show with the show's online community
+      .fb-comments(data-href=route data-numposts="5")

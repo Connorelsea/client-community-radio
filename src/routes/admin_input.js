@@ -26,6 +26,8 @@ export const action = function(req, res) {
 
 		if (target === "post") {
 
+			console.log("TARGET POST in admin_INPUT.js")
+
 			/*
 			 * POST : SUBMIT
 			 * This submits a post using the form body data
@@ -51,6 +53,45 @@ export const action = function(req, res) {
 				})
 			}
 
+		}
+
+		if (target === "show") {
+			if (action === "submit") {
+
+				const title  = req.body.title
+				const link   = req.body.link
+				const guests = req.body.guests
+				const month  = req.body.month
+				const day    = req.body.day
+				const year   = req.body.year
+				const description = req.body.description
+
+				const show = {
+					title, link, guests, month, day, year, description
+				}
+
+				const query = `INSERT INTO shows SET ?`
+
+				getConnection().query(query, show, (err, rows) => {
+					res.redirect("/shows")
+					return true
+				})
+
+			}
+		}
+
+		if (target === "links") {
+			if (action === "edit") {
+				const text = req.body.text
+				console.log(text)
+
+				const query = `UPDATE pages SET text='${text}' WHERE name='links'`
+
+				getConnection().query(query, (err, rows) => {
+					res.redirect("/links")
+					return true
+				})
+			}
 		}
 
 	})

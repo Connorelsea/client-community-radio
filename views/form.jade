@@ -21,6 +21,9 @@ block content
 						.form__group
 							h2.form__input__desc= title
 							p= desc
-							textarea(type="text", name=element.name).form__input
+							if element.defaultValue
+								textarea(type="text", name=element.name).form__input= element.defaultValue
+							else
+								textarea(type="text", name=element.name).form__input
 
 				input(type="submit").form__group__submit

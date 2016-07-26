@@ -9,6 +9,8 @@ import * as admin_input from "./admin_input.js"
 import * as thoughts from "./thoughts.js"
 import * as admin_view from "./admin_view.js"
 import * as admin_posts from "./admin_posts.js"
+import * as show from "./show.js"
+import * as links from "./links.js"
 
 export default {
     home,
@@ -21,5 +23,7 @@ export default {
     admin_input,
     thoughts,
     admin_view,
-    admin_posts
+    admin_posts,
+    show,
+    links,
 }
