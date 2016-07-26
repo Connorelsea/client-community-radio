@@ -1,9 +1,9 @@
 import mysql from "mysql"
 
-const host = "localhost"
-const user = "root"
-const password = ""
-const database = "radio"
+const host = process.env.DATABASE_URL || "localhost"
+const user = process.env.DATABASE_USERNAME || "root"
+const password = process.env.DATABASE_PASSWORD || ""
+const database = process.env.DATABASE_NAME || "radio"
 
 let connection
 
