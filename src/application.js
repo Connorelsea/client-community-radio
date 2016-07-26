@@ -32,8 +32,8 @@ connect().then(function(value) {
 
 }).then(val => {
 
-	app.listen(3000, function() {
-		console.log("Application running on port 3000")
+	app.listen(process.env.PORT || 3000, function() {
+		console.log("Application running on port " + process.env.PORT || 3000)
 	})
 
 }).catch(err => {
