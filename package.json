@@ -2,13 +2,13 @@
   "name": "pause-for-thought-website",
   "version": "0.0.1",
   "scripts": {
-    "start": "nodemon lib/application.js",
+    "start": "node lib/application.js",
     "watch": "npm run clean:css && npm run watch:css & npm run watch:js",
     "build:js": "babel src -d lib",
     "watch:js": "nodemon --watch src --exec npm run build:js",
     "build:css": "stylus -u nib res/styles/src/index.styl -o res/styles/lib",
     "watch:css": "stylus -u nib res/styles/src/index.styl -o res/styles/lib -w",
-    "clean:css": "rm -rf res/styles/lib && mkdir -p res/styles/lib"
+    "clean:css": "rm -rf res/styles/lib && mkdir -p res/styles/lib",
   },
   "dependencies": {
     "babel-cli": "^6.6.5",
